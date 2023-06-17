@@ -3,29 +3,26 @@ import mongoose from "mongoose";
 const PostSchema = new mongoose.Schema({
     title: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
-
     desc: {
         type: String,
-        require: true,
+        required: true
     },
     photo: {
         type: String,
-        require: false,
+        required: false
     },
-    username: {
-        type: String,
-        require: true
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     },
-    categorys:{
-        type: Array,
-        require: false
+    category: {
+        type: String, // Change the type to String
+        required: true
     }
-},
-    { timestamps: true }
-
-);
+}, { timestamps: true });
 
 export const Post = mongoose.model("Post", PostSchema);
