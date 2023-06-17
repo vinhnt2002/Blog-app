@@ -22,33 +22,33 @@ mongoose.connect((process.env.MONGODB_URL), {
 
 }).then(() => {
     console.log("Connected to MongoDB");
-    createAndSavePost();
+    // createAndSavePost();
 }).catch(error => {
     console.log(error.message);
 });
 
 
 // test data 
-async function createAndSavePost() {
-    try {
-      const user = await User.findById("648d3189eaafaef8122a42e0"); // Replace with the actual _id of the user
-      const category = "Food"; // Replace with the desired category string value
+// async function createAndSavePost() {
+//     try {
+//       const user = await User.findById("648d3189eaafaef8122a42e0"); // Replace with the actual _id of the user
+//       const category = "Food"; // Replace with the desired category string value
     
-      const newPost = new Post({
-        title: "The Food with delicious ",
-        desc: "This is a sample post",
-        photo: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        createdBy: user,
-        category: category,
-      });
+//       const newPost = new Post({
+//         title: "The Food with delicious ",
+//         desc: "This is a sample post",
+//         photo: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//         createdBy: user,
+//         category: category,
+//       });
     
-      const savedPost = await newPost.save();
+//       const savedPost = await newPost.save();
     
-      console.log("New post saved:", savedPost);
-    } catch (error) {
-      console.log("Error saving post:", error);
-    }
-  }
+//       console.log("New post saved:", savedPost);
+//     } catch (error) {
+//       console.log("Error saving post:", error);
+//     }
+//   }
   
 
 

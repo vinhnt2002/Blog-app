@@ -65,6 +65,7 @@ export const login = async (req, res) => {
         res.status(500).json({ message: 'An error occurred while logging in' });
     }
 };
+
 export const logout = async (req, res) => {
     try {
       
